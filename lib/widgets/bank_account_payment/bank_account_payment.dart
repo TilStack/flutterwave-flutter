@@ -41,7 +41,8 @@ class PayWithBankAccountState extends State<PayWithBankAccount> {
   @override
   void initState() {
     super.initState();
-    this.banks = FlutterwaveAPIUtils.getBanks(http.Client(), this.widget._paymentManager.publicKey);
+    this.banks = FlutterwaveAPIUtils.getBanks(
+        http.Client(), this.widget._paymentManager.publicKey);
   }
 
   @override
@@ -84,8 +85,9 @@ class PayWithBankAccountState extends State<PayWithBankAccount> {
                       fontSize: 20.0,
                     ),
                     controller: this._phoneNumberController,
-                    validator: (value) =>
-                    value != null && value.isEmpty ? "Phone Number is required" : null,
+                    validator: (value) => value != null && value.isEmpty
+                        ? "Phone Number is required"
+                        : null,
                   ),
                   TextFormField(
                     onTap: this._showBottomSheet,
@@ -101,8 +103,9 @@ class PayWithBankAccountState extends State<PayWithBankAccount> {
                       fontSize: 20.0,
                     ),
                     controller: this._bankController,
-                    validator: (value) =>
-                    value != null && value.isEmpty ? "Bank is required" : null,
+                    validator: (value) => value != null && value.isEmpty
+                        ? "Bank is required"
+                        : null,
                   ),
                   TextFormField(
                     decoration: InputDecoration(
@@ -116,17 +119,19 @@ class PayWithBankAccountState extends State<PayWithBankAccount> {
                       fontSize: 20.0,
                     ),
                     controller: this._accountNumberController,
-                    validator: (value) =>
-                    value != null && value.isEmpty
-                        ? "Account Number is required" : null,
+                    validator: (value) => value != null && value.isEmpty
+                        ? "Account Number is required"
+                        : null,
                   ),
                   Container(
                     width: double.infinity,
                     height: 50,
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       onPressed: this._onPaymentClicked,
-                      color: Colors.orangeAccent,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orangeAccent,
+                      ),
                       child: Text(
                         "PAY WITH ACCOUNT",
                         style: TextStyle(color: Colors.white, fontSize: 15),

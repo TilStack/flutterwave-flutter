@@ -39,7 +39,8 @@ class AccountDetails extends StatelessWidget {
                       textAlign: TextAlign.start,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
-                    Text(authorization.transferAmount.toString(),
+                    Text(
+                      authorization.transferAmount.toString(),
                       textAlign: TextAlign.end,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
@@ -57,7 +58,8 @@ class AccountDetails extends StatelessWidget {
                       textAlign: TextAlign.start,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
-                    Text(authorization.transferAccount,
+                    Text(
+                      authorization.transferAccount,
                       textAlign: TextAlign.end,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
@@ -75,7 +77,8 @@ class AccountDetails extends StatelessWidget {
                       textAlign: TextAlign.start,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
-                    Text(authorization.transferBank,
+                    Text(
+                      authorization.transferBank,
                       textAlign: TextAlign.end,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
@@ -94,7 +97,8 @@ class AccountDetails extends StatelessWidget {
                       textAlign: TextAlign.start,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
-                    Text(this._extractNameFromNote(authorization.transferNote),
+                    Text(
+                      this._extractNameFromNote(authorization.transferNote),
                       textAlign: TextAlign.end,
                       style: TextStyle(color: Colors.black, fontSize: 18),
                     ),
@@ -105,9 +109,11 @@ class AccountDetails extends StatelessWidget {
                 height: 40,
                 width: double.infinity,
                 margin: EdgeInsets.fromLTRB(5, 10, 20, 5),
-                child: RaisedButton(
+                child: ElevatedButton(
                   onPressed: _handleTransferMade,
-                  color: Colors.orange,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                  ),
                   child: Text(
                     "I have made the transfer",
                     style: TextStyle(color: Colors.white, fontSize: 18),

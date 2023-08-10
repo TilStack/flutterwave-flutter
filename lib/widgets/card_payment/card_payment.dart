@@ -172,9 +172,11 @@ class _CardPaymentState extends State<CardPayment>
                   width: double.infinity,
                   height: 45,
                   margin: EdgeInsets.fromLTRB(40, 20, 20, 40),
-                  child: RaisedButton(
+                  child: ElevatedButton(
                     onPressed: this._onCardFormClick,
-                    color: Colors.orangeAccent,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orangeAccent,
+                    ),
                     child: Text(
                       "PAY",
                       style: TextStyle(color: Colors.white),
@@ -204,7 +206,11 @@ class _CardPaymentState extends State<CardPayment>
     this._showLoading(FlutterwaveConstants.INITIATING_PAYMENT);
 
     final ChargeCardRequest chargeCardRequest = ChargeCardRequest(
-        cardNumber: this._cardNumberFieldController.value.text.trim()
+        cardNumber: this
+            ._cardNumberFieldController
+            .value
+            .text
+            .trim()
             .replaceAll(new RegExp(r"\s+"), ""),
         cvv: this._cardCvvFieldController.value.text.trim(),
         expiryMonth: this._cardMonthFieldController.value.text.trim(),
